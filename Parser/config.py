@@ -84,7 +84,7 @@ for j in range(sourcesCFG):
             maindictionary[key][channelkey] = channel
         for i in range(dgnmr):
             for h in range(16):
-                channelkey = "Digital channel"+str((i*16)+1)
+                channelkey = "digital channel"+str((i*16)+h+1)
                 channel = config[index:(index+16)].decode().strip()
                 index += 16
                 # print("channel: ",channel)
@@ -105,7 +105,7 @@ for j in range(sourcesCFG):
             maindictionary[key][factorkey] = factor
 
         for i in range(dgnmr):
-            factorkey = "analog factor"+str(i+1)
+            factorkey = "digital factor"+str(i+1)
             factor = int.from_bytes(config[index:index+4],byteorder='big',signed=False)
             index += 4
             # print(factor)
